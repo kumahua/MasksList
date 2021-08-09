@@ -30,10 +30,15 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call, e: java.io.IOException) {
                 Log.d("HKT", "onFailure: $e")
             }
+            //注意要設定 UI ，需要執行在 UiThread 裡面，否則會噴錯誤
 
             override fun onResponse(call: Call, response: Response) {
-                Log.d("HKT", "onResponse: ${response.body?.string()}")
-
+                //Log.d("HKT", "onResponse: ${response.body?.string()}")
+                val pharmaciesData : String? = response.body?.string()
+                runOnUiThread{
+                    //將 Okhttp 獲取到的回應值，指定到畫面的 TextView 元件中
+                    tv_pharmacies_data.text = pharmaciesData
+                }
             }
         })
     }
