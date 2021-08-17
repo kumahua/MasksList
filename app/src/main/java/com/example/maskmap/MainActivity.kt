@@ -3,6 +3,8 @@ package com.example.maskmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.maskmap.data.PharmacyInfo
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import org.json.JSONArray
@@ -42,29 +44,35 @@ class MainActivity : AppCompatActivity() {
                 //所以我們將他轉存到 pharmaciesData 。
                 val pharmaciesData = response.body?.string()
 
+                val pharmacyInfo = Gson().fromJson(pharmaciesData, PharmacyInfo::class.java)
+
+                for(i in pharmacyInfo.features) {
+                    Log.d("pharmacyData","藥局資料： ${i.property.name}")
+                }
+
                 //將 pharmaciesData 整包字串資料，轉成 JSONObject 格式
-                val obj = JSONObject(pharmaciesData)
+//                val obj = JSONObject(pharmaciesData)
 
                 //這個時候，我們就可以透過 getString 的方式，裡面放 key (name) 值，
                 //即可以獲取到最外層的 type 欄位資料值。
                 //Log.d("HKT",obj.getString("type"))
 
                 //features 是一個陣列 [] ，需要將他轉換成 JSONArray
-                val featuresArray = JSONArray(obj.getString("features"))
+//                val featuresArray = JSONArray(obj.getString("features"))
 
-                val propertiesName = StringBuilder()
+//                val propertiesName = StringBuilder()
                 //透過 for 迴圈，即可以取出所有的藥局名稱
-                for (i in 0 until featuresArray.length()) {
-                    val properties = featuresArray.getJSONObject(i).getString("properties")
-                    val property = JSONObject(properties)
+//                for (i in 0 until featuresArray.length()) {
+//                    val properties = featuresArray.getJSONObject(i).getString("properties")
+//                    val property = JSONObject(properties)
 //                    Log.d("HKT", "name: ${property.getString("name")}")
-                    propertiesName.append(property.getString("name") + "\n")
-                }
+//                    propertiesName.append(property.getString("name") + "\n")
+//                }
 
-                runOnUiThread{
+//                runOnUiThread{
                     //將 Okhttp 獲取到的回應值，指定到畫面的 TextView 元件中
-                    tv_pharmacies_data.text = propertiesName
-                }
+//                    tv_pharmacies_data.text = propertiesName
+//                }
             }
         })
     }
