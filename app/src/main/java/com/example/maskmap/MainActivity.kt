@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import com.example.maskmap.data.PharmacyInfo
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -47,7 +46,8 @@ class MainActivity : AppCompatActivity() {
                 val pharmacyInfo = Gson().fromJson(pharmaciesData, PharmacyInfo::class.java)
 
                 for(i in pharmacyInfo.features) {
-                    Log.d("pharmacyData","藥局資料： ${i.property.name}")
+                    Log.d("pharmacyData","藥局資料： ${i.properties.name}")
+                    Log.d("pharmacyData","藥局電話： ${i.properties.phone}")
                 }
 
                 //將 pharmaciesData 整包字串資料，轉成 JSONObject 格式
