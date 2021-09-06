@@ -9,7 +9,7 @@ import com.example.maskmap.databinding.ItemViewBinding
 //RecyclerView.Adapter<加入定義畫面的view，也就是MyViewHolder>()
 class MainAdapter : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
 
-    var pharmacylist :List<Feature> = emptyList()
+    var pharmacyList :List<Feature> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -31,10 +31,11 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
 
     //決定元件上要顯示的資料
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemViewBinding.tvName.text = ""
+        holder.itemViewBinding.tvName.text = pharmacyList[position].properties.name
     }
+
     //決定資料大小
     override fun getItemCount(): Int {
-        return pharmacylist.size
+        return pharmacyList.size
     }
 }
