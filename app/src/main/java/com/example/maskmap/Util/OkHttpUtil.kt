@@ -26,7 +26,7 @@ class OkHttpUtil {
             build()
         }
 
-        //Part 3: 宣告 Call
+        //宣告 Call
         val call = mOkHttpClient?.newCall(request)
 
         //執行 Call 連線後，採用 enqueue 非同步方式，獲取到回應的結果資料

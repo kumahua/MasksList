@@ -7,7 +7,7 @@ import com.example.maskmap.data.Feature
 import com.example.maskmap.databinding.ItemViewBinding
 
 //RecyclerView.Adapter<加入定義畫面的view，也就是MyViewHolder>()
-class MainAdapter() :
+class MainAdapter(mainActivity: MainActivity) :
     RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
 
     var pharmacyList :List<Feature> = emptyList()
