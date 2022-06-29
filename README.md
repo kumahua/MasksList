@@ -1,6 +1,6 @@
 # MasksList
 使用 Kotlin 程式語言，來串接口罩即時庫存的公開資料，從實作中來學習如何開發一款 Android APP 應用程式。
-## OkHttp 基本拉資料方式 (GET 請求範例)
+## OkHttp 基本拉資料方式 (GET 請求)
 OkHttp 主要可以分成三個部分：
 
 Part 1. OkHttpClient
@@ -37,3 +37,45 @@ Part 3. Call
         }
     })
     }
+
+## 設定 RecyclerView
+MainActivity.kt，設定 RecyclerView 的 manager 和 adapter
+
+    class MainActivity : AppCompatActivity() {
+
+    //定義全域變數
+    private lateinit var viewAdapter: MainAdapter
+    private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var binding: ActivityMainBinding
+    ...
+    ...
+    ...
+     private fun initView() {
+            // 定義 LayoutManager 為 LinearLayoutManager
+            viewManager = LinearLayoutManager(this)
+
+            // 自定義 Adapte 為 MainAdapter，稍後再定義 MainAdapter 這個類別
+            viewAdapter = MainAdapter()
+
+            // 定義從佈局當中，拿到 recycler_view 元件，
+            binding.recyclerView.apply {
+                // 透過 kotlin 的 apply 語法糖，設定 LayoutManager 和 Adapter
+                layoutManager = viewManager
+                adapter = viewAdapter
+            }
+        }
+    ...
+    ...
+    ...
+
+    private fun getPharmacyData() {
+    ...
+            runOnUiThread {
+                //將下載的口罩資料，指定給 MainAdapter
+                viewAdapter.pharmacyList = pharmacyInfo.features
+
+                //關閉忙碌圈圈
+                binding.progressBar.visibility = View.GONE
+            }
+    }
+
