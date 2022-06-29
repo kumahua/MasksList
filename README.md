@@ -1,6 +1,7 @@
 # MasksList
 Start
 ## OkHttp 基本拉資料方式 (GET 請求範例)
+
   private fun getPharmacyData() {
     //口罩資料網址
     val pharmaciesDataUrl =
