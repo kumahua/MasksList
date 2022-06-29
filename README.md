@@ -1,5 +1,5 @@
 # MasksList
-Start
+使用 Kotlin 程式語言，來串接口罩即時庫存的公開資料，從實作中來學習如何開發一款 Android APP 應用程式。
 ## OkHttp 基本拉資料方式 (GET 請求範例)
 OkHttp 主要可以分成三個部分：
 
