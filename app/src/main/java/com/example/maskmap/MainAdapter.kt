@@ -7,7 +7,7 @@ import com.example.maskmap.data.Feature
 import com.example.maskmap.databinding.ItemViewBinding
 
 //RecyclerView.Adapter<加入定義畫面的view，也就是MyViewHolder>()
-class MainAdapter(mainActivity: MainActivity) :
+class MainAdapter(private val itemClickListener: IItemClickListener) :
     RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
 
     var pharmacyList :List<Feature> = emptyList()
@@ -33,9 +33,9 @@ class MainAdapter(mainActivity: MainActivity) :
         holder.itemViewBinding.tvAdultAmount.text = pharmacyList[position].properties.mask_adult.toString()
         holder.itemViewBinding.tvChildAmount.text = pharmacyList[position].properties.mask_child.toString()
 
-//        holder.itemViewBinding.layoutItem.setOnClickListener {
-//            itemClickListener.onItemClickListener(pharmacyList[position])
-//        }
+        holder.itemViewBinding.layoutItem.setOnClickListener {
+            itemClickListener.onItemClickListener(pharmacyList[position])
+        }
     }
 
     //決定資料大小

@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/a4704/Documents/GitHub/MasksList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.292" />
+        <entry key="..\:/Users/a4704/Documents/GitHub/MasksList/app/src/main/res/drawable/bg_amount_info.xml" value="0.292" />
+        <entry key="..\:/Users/a4704/Documents/GitHub/MasksList/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/a4704/Documents/GitHub/MasksList/app/src/main/res/layout/activity_pharmacy_detail.xml" value="0.33" />
+        <entry key="..\:/Users/a4704/Documents/GitHub/MasksList/app/src/main/res/layout/item_view.xml" value="0.25" />
         <entry key="..\:/Users/a4704/Documents/GitHub/MasksMap/app/src/main/res/drawable/bg_amount_info.xml" value="0.37395833333333334" />
         <entry key="..\:/Users/a4704/Documents/GitHub/MasksMap/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.2985" />
         <entry key="..\:/Users/a4704/Documents/GitHub/MasksMap/app/src/main/res/layout/activity_main.xml" value="0.26358695652173914" />
