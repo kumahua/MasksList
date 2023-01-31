@@ -1,5 +1,5 @@
 # MasksList
-使用 Kotlin 程式語言，來串接口罩即時庫存的公開資料，從實作中來學習如何開發一款 Android APP 應用程式。
+串接口罩即時庫存的公開資料，實作開發一款 Android APP 應用程式。
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/40682280/176395938-530188b4-6a2f-40a3-852d-7e5297f6a0c6.png" width="350"> <img src="https://user-images.githubusercontent.com/40682280/176396780-a3fe2ecc-46b4-44de-9651-d21167d97027.png" width="350">
 <p>
